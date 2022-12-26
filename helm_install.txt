@@ -1,0 +1,10 @@
+helm repo add argo \
+    https://argoproj.github.io/argo-helm
+
+
+helm upgrade --install \
+    argocd argo/argo-cd \
+    --namespace argocd \
+    --set server.ingress.hosts="{argocd.$INGRESS_HOST.nip.io}" \
+    --values argocd-values.yaml \
+    --wait
