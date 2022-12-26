@@ -1,0 +1,5 @@
+argocd app create silly-pv \
+    --repo https://github.com/fpinero/argo-cd-example-nginix-app.git \
+    --path k8s_second_app \
+    --dest-server https://kubernetes.default.svc \
+    --dest-namespace silly-pv
